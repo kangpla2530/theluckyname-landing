@@ -196,6 +196,17 @@ section{padding:88px 0}
 .plate .score{display:flex;align-items:center;gap:22px;margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)}
 .plate .score b{font-family:var(--serif);font-size:2.2rem;color:var(--gold);line-height:1}
 .plate .score span{font-size:.88rem;color:rgba(255,255,255,.7)}
+.strip-wrap{position:relative}
+.strip{scrollbar-width:none;scroll-behavior:smooth}
+.strip::-webkit-scrollbar{display:none}
+.strip-nav{position:absolute;top:calc(50% - 28px);z-index:2;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.28);transition:opacity .2s,transform .15s}
+.strip-nav svg{width:24px;height:24px}
+.strip-nav:hover{transform:scale(1.06)}
+.strip-nav.prev{left:-22px}
+.strip-nav.next{right:-22px}
+.strip-nav[disabled]{opacity:0;pointer-events:none}
+@media (max-width:1240px){.strip-nav.prev{left:6px}.strip-nav.next{right:6px}}
+@media (max-width:640px){.strip-nav{width:42px;height:42px}.strip-nav svg{width:20px;height:20px}}
 .clients{margin-top:56px}
 .clients h3{color:#fff;font-size:1.15rem}
 .client-names{display:flex;flex-wrap:wrap;gap:8px 10px;margin:16px 0 26px;padding:0;list-style:none}
@@ -481,7 +492,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <a class="btn btn-ghost" href="tel:0993541542" data-track="click_call" data-loc="hero">โทร 099-354-1542</a>
       </div>
       <ul class="facts">
-        <li class="lead-fact"><b>10,000+</b><span>ธุรกิจเลือกใช้ชื่อจาก อ.ชัญ</span></li>
+        <li class="lead-fact"><b>3,000+ ธุรกิจ</b><span>เลือกใช้ชื่อจาก อ.ชัญ</span></li>
         <li><b>15 ปี</b><span>ประสบการณ์ตั้งชื่อ</span></li>
         <li><b>1,999.-</b><span>ราคาเริ่มต้น (+VAT)</span></li>
       </ul>
@@ -514,22 +525,23 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
       <video class="vplayer" id="video" controls playsinline preload="metadata" poster="img/18.jpg" aria-label="วิดีโอรีวิวจากคุณนาตาลี ลูกค้าที่ใช้บริการจริง">
         <source src="video/review.mp4" type="video/mp4">
       </video>
-      <p class="vcap">รีวิวสุดปังจากลูกค้าประจำที่รับบริการออกแบบโลโก้มากกว่า 6 แบรนด์ดัง!</p>
+      <p class="vcap">รีวิวสุดปังจากลูกค้าประจำที่ใช้บริการตั้งชื่อบริษัทมากกว่า 6 แบรนด์ดัง!</p>
     </div>
     <div>
       <figure class="quote real" style="margin:0">
         <blockquote style="margin:0"><p>มิลใช้บริการกับ อ.ชัญ ทั้งตั้งชื่อและเปลี่ยนชื่อบริษัท รวม 3 ครั้งค่ะ หลังจากนำชื่อที่อาจารย์ออกแบบให้มาใช้ มิลรู้สึกว่าชื่อเข้ากับธุรกิจและช่วยให้มั่นใจขึ้นเวลาที่แนะนำบริษัทกับลูกค้าค่ะ ขอบคุณ อ.ชัญ และทีมงานที่ช่วยดูแลนะคะ</p></blockquote>
         <figcaption class="person">
           <img loading="lazy" src="img/16.jpg" alt="คุณภัสรานันท์ กุลธราโกมลพันธ์">
-          <div><b>ภัสรานันท์ กุลธราโกมลพันธ์</b><span>ผู้บริหาร THE GRAND ENGINEER (เดอะ แกรนด์ เอ็นจิเนียริ่ง)</span></div>
+          <div><b>ภัสรานันท์ กุลธราโกมลพันธ์</b><span>ผู้บริหารโครงการบ้านทิวารินทร์ (บริษัท เดอะ แกรนด์ เอ็นจิเนียริ่ง จำกัด)</span></div>
         </figcaption>
-        <img class="proof" loading="lazy" src="img/17.jpg" alt="ภาพแชทรีวิวจากคุณภัสรานันท์ ถึง อ.ชัญ">
       </figure>
-      <div class="quote">
-        <span class="todo">รอข้อความรีวิวจริง</span>
-        <p>[ใช้รีวิวจากลูกค้าธุรกิจ 3–5 ราย ต่างประเภทธุรกิจ เช่น ก่อสร้าง โลจิสติกส์ คลินิก]</p>
-        <p class="who">ชื่อ-นามสกุลจริง, ตำแหน่ง, ชื่อบริษัท</p>
-      </div>
+      <figure class="quote real" style="margin:14px 0 0">
+        <blockquote style="margin:0"><p>ชอบชื่อ บริษัท บ้านดีชีวิตดีมีทรัพย์ กรุ๊ป จำกัด มาก ๆ เลยค่ะ 🥰 ชื่อนี้ทั้งไพเราะ ความหมายดี และตรงกับสิ่งที่ต้องการเลยค่ะ ตัดสินใจเลือกชื่อนี้นะคะ</p></blockquote>
+        <figcaption class="person">
+          <img loading="lazy" src="img/20.jpg" alt="คุณจีนเจีย">
+          <div><b>จีนเจีย</b><span>ผู้บริหาร บริษัท บ้านดีชีวิตดีมีทรัพย์ กรุ๊ป จำกัด</span></div>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -549,7 +561,10 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
 
     <div class="clients">
       <h3>บริษัทที่เลือกใช้ชื่อจาก TheLuckyName</h3>
-      <div class="strip" tabindex="0" aria-label="ภาพรีวิวจากลูกค้าธุรกิจ เลื่อนดูได้">
+      <div class="strip-wrap">
+      <button type="button" class="strip-nav prev" aria-label="ดูผลงานก่อนหน้า" data-dir="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button type="button" class="strip-nav next" aria-label="ดูผลงานถัดไป" data-dir="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="strip" id="strip" tabindex="0" aria-label="ภาพรีวิวจากลูกค้าธุรกิจ เลื่อนดูได้">
         <figure><img loading="lazy" src="img/pf1.jpg" alt="โครงการหมู่บ้าน SURIYA VILLAGE"><figcaption>โครงการหมู่บ้าน SURIYA VILLAGE</figcaption></figure>
         <figure><img loading="lazy" src="img/14.jpg" alt="รีวิวจาก PNF Clinic Group"><figcaption>บริษัท พีเอ็นเอฟ คลินิก กรุ๊ป จำกัด</figcaption></figure>
         <figure><img loading="lazy" src="img/13.jpg" alt="เจ้าของ PNF Clinic Group หน้าป้ายชื่อบริษัท"><figcaption>เจ้าของ PNF Clinic Group</figcaption></figure>
@@ -567,6 +582,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <figure><img loading="lazy" src="img/c5.jpg" alt="รีวิวจาก ศิริเลิศโลจิสติกส์"><figcaption>บริษัท ศิริเลิศโลจิสติกส์ จำกัด</figcaption></figure>
         <figure><img loading="lazy" src="img/c6.jpg" alt="รีวิวจาก โชคยืนทรัพย์"><figcaption>บริษัท โชคยืนทรัพย์ อินเตอร์ฟู้ด</figcaption></figure>
       </div>
+      </div>
     </div>
   </div>
 </section>
@@ -578,7 +594,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
       <svg class="promo-icon" viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><rect x="7" y="19" width="34" height="23" rx="2"/><rect x="4" y="12" width="40" height="8" rx="2"/><path d="M24 12v30"/><path d="M24 12c-3-6-12-7-12-1 0 3 6 2 12 1zM24 12c3-6 12-7 12-1 0 3-6 2-12 1z"/></g></svg>
       <div class="promo-text">
         <h3>เฉพาะ 10 ออเดอร์แรกเท่านั้น</h3>
-        <p>จะได้รับของแถมสุดพิเศษ ทักไลน์เพื่อจองสิทธิ์และสอบถามรายละเอียดของแถม</p>
+        <p>รับของแถมสุดพิเศษ <b>เช็คชื่อบริษัทมงคลเบื้องต้นฟรี 1 ชื่อ</b> ทักไลน์เพื่อจองสิทธิ์ได้เลย</p>
       </div>
       <a class="btn btn-line" id="promo-cta" href="https://line.me/R/ti/p/@theluckyname" data-track="click_promo" data-loc="promo">จองสิทธิ์ทางไลน์</a>
     </div>
@@ -613,7 +629,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <li><b>อายุ 13 ปี</b><span>พบหนังสือพรหมชาติในตู้หนังสือของคุณป้า และเริ่มหลงใหลในโหราศาสตร์ไทย</span></li>
         <li><b>ศึกษาอย่างจริงจัง</b><span>เลขศาสตร์ โหราศาสตร์ไทย และการวางฤกษ์</span></li>
         <li><b>กว่า 15 ปี</b><span>ทำงานด้านการตั้งชื่อมงคลอย่างต่อเนื่อง</span></li>
-        <li><b>วันนี้</b><span>ลูกค้ามากกว่า 10,000 คน ไว้วางใจให้ อ.ชัญ ตั้งชื่อบริษัทให้</span></li>
+        <li><b>วันนี้</b><span>3,000+ ธุรกิจ ไว้วางใจให้ อ.ชัญ ตั้งชื่อบริษัทให้</span></li>
       </ol>
       <div class="ctas">
         <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="about">แอดไลน์ ปรึกษา อ.ชัญ</a>
@@ -689,7 +705,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <p class="fit">มีชื่อให้เลือก สำหรับเจ้าของ 1–2 ท่าน</p>
         <div class="price"><b>2,999</b><span>บาท</span></div>
         <div class="vat">+VAT 7% รวม 3,209 บาท</div>
-        <ul><li>ชื่อบริษัทมงคล 3 ชื่อให้เลือก</li><li>วิเคราะห์ดวงเจ้าของและหุ้นส่วน 1–2 ท่าน</li><li>ส่งงานภายใน 24 ชั่วโมง</li></ul>
+        <ul><li>ชื่อบริษัทมงคล 3 ชื่อให้เลือก</li><li>วิเคราะห์ดวงเจ้าของและหุ้นส่วน 1–2 ท่าน</li><li>เร็วสุดภายใน 24 ชม.</li></ul>
         <a class="btn btn-line" data-pkg="ปั้นเงิน" href="#" data-track="click_package">เลือกแพ็กเกจปั้นเงิน</a>
       </article>
       <article class="pkg">
@@ -697,7 +713,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <p class="fit">สำหรับธุรกิจที่มีหุ้นส่วนหลายคน</p>
         <div class="price"><b>4,999</b><span>บาท</span></div>
         <div class="vat">+VAT 7% รวม 5,349 บาท</div>
-        <ul><li>ชื่อบริษัทมงคล 6 ชื่อให้เลือก</li><li>วิเคราะห์ดวงหุ้นส่วน 2 ท่านขึ้นไป</li><li>คำแนะนำการวางหุ้นส่วน</li><li>ส่งงานภายใน 24 ชั่วโมง</li></ul>
+        <ul><li>ชื่อบริษัทมงคล 6 ชื่อให้เลือก</li><li>วิเคราะห์ดวงหุ้นส่วน 2 ท่านขึ้นไป</li><li>คำแนะนำการวางหุ้นส่วน</li><li>เร็วสุดภายใน 24 ชม.</li></ul>
         <a class="btn" data-pkg="ปั้นทอง" href="#" data-track="click_package">เลือกแพ็กเกจปั้นทอง</a>
       </article>
     </div>
@@ -714,7 +730,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
     <div class="why-grid">
       <article class="why-card main">
         <h3>ความเชี่ยวชาญและประสบการณ์</h3>
-        <p>อ.ชัญ ทำงานด้านการตั้งชื่อมงคลมากว่า 15 ปี ตั้งชื่อให้ธุรกิจมาแล้ว 10,000+ ธุรกิจ ทั้งก่อสร้าง อสังหาฯ โลจิสติกส์ คลินิก และร้านค้า</p>
+        <p>อ.ชัญ ทำงานด้านการตั้งชื่อมงคลมากว่า 15 ปี ตั้งชื่อให้ธุรกิจมาแล้ว 3,000+ ธุรกิจ ทั้งก่อสร้าง อสังหาฯ โลจิสติกส์ คลินิก และร้านค้า</p>
       </article>
       <article class="why-card main">
         <h3>มีรายละเอียดภาพรวมพื้นดวงชะตาตามหลักโหราศาสตร์ไทยทุกเคส</h3>
@@ -745,11 +761,11 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
   <div class="wrap">
     <div class="sec-head"><h2 id="fq-h">คำถามที่พบบ่อย</h2></div>
     <details><summary>ต้องเตรียมข้อมูลอะไรบ้าง?</summary><p>วันเดือนปีและเวลาเกิดของเจ้าของและหุ้นส่วนที่ต้องการวิเคราะห์ ประเภทธุรกิจ และแนวชื่อหรือภาษาที่ต้องการ (ถ้ามี)</p></details>
-    <details><summary>ชื่อที่ได้ จดทะเบียนได้จริงไหม?</summary><p>ทุกชื่อตรวจแล้วว่าไม่ซ้ำและจดทะเบียนได้จริง <span class="todo">ยืนยัน: ตรวจกับระบบจองชื่อของกรมพัฒนาธุรกิจการค้าหรือไม่</span></p></details>
+    <details><summary>ชื่อที่ได้ จดทะเบียนได้จริงไหม?</summary><p>ทุกชื่อตรวจแล้วว่าไม่ซ้ำและจดทะเบียนได้จริง</p></details>
     <details><summary>มีหุ้นส่วนหลายคน ควรเลือกแพ็กเกจไหน?</summary><p>ถ้ามีเจ้าของหรือหุ้นส่วน 1–2 ท่าน แนะนำแพ็กเกจปั้นเงิน ถ้ามีตั้งแต่ 2 ท่านขึ้นไปและอยากได้คำแนะนำการวางหุ้นส่วน แนะนำแพ็กเกจปั้นทอง</p></details>
     <details><summary>ตั้งชื่อเป็นภาษาอังกฤษได้ไหม?</summary><p>ได้ สามารถตั้งชื่อได้ทั้งชื่อภาษาไทยและภาษาอังกฤษ หรือถ้ามีภาษาอื่นก็ระบุมาได้ค่ะ</p></details>
     <details><summary>ถ้าไม่ถูกใจชื่อที่ได้ ทำอย่างไร?</summary><p>ก่อนเริ่มออกแบบชื่อ คุณลูกค้าสามารถกำหนดเงื่อนไขในการตั้งชื่อมาให้เราได้ และสำหรับแพ็กเกจตั้งแต่ 3 ชื่อขึ้นไป ทางเราจะตั้งชื่อให้เลือกก่อนครึ่งหนึ่งค่ะ</p></details>
-    <details><summary>บริษัทเดิมอยากเปลี่ยนชื่อ ทำได้ไหม?</summary><p>ได้ ลองตรวจชื่อเดิมเบื้องต้นฟรีด้วย<a href="https://www.theluckyname.com/checkcompany/" data-track="click_check_tool" data-loc="faq">เครื่องมือตรวจชื่อบริษัท</a> แล้วทักไลน์ปรึกษา อ.ชัญ ได้เลย</p></details>
+    <details><summary>บริษัทเดิมอยากเปลี่ยนชื่อ ทำได้ไหม?</summary><p><a href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="faq">ทักเพื่อปรึกษา อ.ชัญ</a> ได้เลยค่ะ</p></details>
     <details><summary>ต่างจากการคิดชื่อเองด้วยเลขศาสตร์อย่างไร?</summary><p>เลขศาสตร์ดูแค่ผลรวมของตัวอักษร แต่ อ.ชัญ วิเคราะห์ครบ 3 ศาสตร์ร่วมกับดวงของเจ้าของและหุ้นส่วน รวมถึงดูว่าชื่อสื่อถึงธุรกิจและจดทะเบียนได้จริง</p></details>
   </div>
 </section>
@@ -759,7 +775,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
   <div class="wrap">
     <div>
       <h2 id="fn-h">ให้ชื่อบริษัทเป็นจุดเริ่มต้นที่ดีตั้งแต่วันแรก</h2>
-      <p class="exp">ตั้งชื่อให้มาแล้ว<b>10,000+ ธุรกิจ</b></p>
+      <p class="exp">ตั้งชื่อให้มาแล้ว<b>3,000+ ธุรกิจ</b></p>
       <p class="lede">ทักไลน์หรือโทรปรึกษา อ.ชัญ ได้ ก่อนตัดสินใจเลือกแพ็กเกจ</p>
       <div class="ctas">
         <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="final">แอดไลน์ @theluckyname</a>
@@ -821,6 +837,12 @@ window.addEventListener('scroll', function(){
   [50,90].forEach(function(m){ if(!marks[m] && pct >= m){ marks[m] = true; track('scroll_depth', {percent: m}); } });
 }, {passive:true});
 (function(v){ if (!v) return; var sent = false; v.addEventListener('play', function(){ if (!sent) { sent = true; track('video_play', {location: 'reviews'}); } }); })(document.getElementById('video'));
+(function(s){ if (!s) return;
+  var btns = document.querySelectorAll('.strip-nav');
+  function upd(){ var max = s.scrollWidth - s.clientWidth - 4; btns[0].disabled = s.scrollLeft <= 4; btns[1].disabled = s.scrollLeft >= max; }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ s.scrollBy({left: +b.dataset.dir * s.clientWidth * .9, behavior: 'smooth'}); }); });
+  s.addEventListener('scroll', upd, {passive: true}); addEventListener('resize', upd); upd();
+})(document.getElementById('strip'));
 document.querySelectorAll('.faq details').forEach(function(d){
   d.addEventListener('toggle', function(){ if (d.open) track('faq_open', {question: d.querySelector('summary').textContent}); });
 });
