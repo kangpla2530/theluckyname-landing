@@ -58,6 +58,8 @@ section{padding:88px 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1.02rem/1 var(--sans);padding:17px 26px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .15s ease, background-color .15s ease}
 .btn:active{transform:scale(.98)}
 .btn-line{background:var(--line-green);color:#fff}
+.btn .ln{width:22px;height:22px;flex:none;display:inline-block;background:no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23fff' d='M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8Zm-3.5 10.4H6.6a.5.5 0 0 1-.5-.5V9a.5.5 0 0 1 1 0v3.4h1.4a.5.5 0 0 1 0 1Zm2-.5a.5.5 0 0 1-1 0V9a.5.5 0 0 1 1 0Zm4.6 0a.5.5 0 0 1-.9.3l-2-2.7v2.4a.5.5 0 0 1-1 0V9a.5.5 0 0 1 .9-.3l2 2.7V9a.5.5 0 0 1 1 0Zm3.1-2.4a.5.5 0 0 1 0 1h-1.4v.9h1.4a.5.5 0 0 1 0 1h-1.9a.5.5 0 0 1-.5-.5V9a.5.5 0 0 1 .5-.5h1.9a.5.5 0 0 1 0 1h-1.4v.9Z'/%3E%3C/svg%3E")}
+.mbar .btn{gap:6px;line-height:1.25}
 .btn-line:hover{background:#05b04b}
 .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff;background:transparent}
 .btn-ghost:hover{background:rgba(255,255,255,.08)}
@@ -366,20 +368,9 @@ section{padding:88px 0}
 .final{background:var(--ink);color:#fff}
 .final .wrap{display:block;max-width:860px;text-align:center}
 .final .lede{margin-left:auto;margin-right:auto}
-.final .ctas,.final .share-btns{justify-content:center}
-.final .share-url{margin-left:auto;margin-right:auto}
+.final .ctas{justify-content:center}
 .final .lede{color:rgba(255,255,255,.78)}
 .final .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.share{margin-top:32px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
-.share p{font-size:.95rem;color:rgba(255,255,255,.82)}
-.share-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.sh{display:inline-flex;align-items:center;gap:8px;font:600 .95rem/1 var(--sans);padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;cursor:pointer}
-.sh svg{width:18px;height:18px;flex:none}
-.sh:hover{background:rgba(255,255,255,.16)}
-.sh-line svg{color:#06C755}
-.sh-fb svg{color:#8FB4FF}
-.share-url{width:100%;max-width:420px;margin-top:10px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.2);color:#fff;font:400 .9rem var(--sans)}
-.share-msg{min-height:1.4em;margin-top:8px;font-size:.9rem;color:var(--gold)}
 .final .exp{font-family:var(--serif);font-size:clamp(1.2rem,2vw,1.5rem);font-weight:600;color:rgba(255,255,255,.9);margin-top:18px;line-height:1.5}
 .final .exp b{display:block;font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:800;color:var(--gold);line-height:1.25}
 .final-photo{margin:0;position:relative}
@@ -439,7 +430,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
   .promo{flex-direction:column;align-items:flex-start;gap:12px;padding:22px 20px}
   .promo .btn{width:100%}
   .promo-icon{width:44px;height:44px}
-  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(84,10,138,.97);z-index:50}
+  .mbar{display:grid;grid-template-columns:minmax(0,2.3fr) minmax(0,1fr);gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(84,10,138,.97);z-index:50}
   .mbar .btn{padding:14px 10px;font-size:.98rem}
 }
 </style>
@@ -453,7 +444,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
     </a>
     <nav class="top-links" aria-label="ติดต่อ">
       <a class="tel" href="tel:0993541542" data-track="click_call" data-loc="header">โทร 099-354-1542</a>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="header">แอดไลน์</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="header"><i class="ln" aria-hidden="true"></i>สอบถามเรื่องตั้งชื่อบริษัทมงคล</a>
     </nav>
   </div>
 </header>
@@ -464,7 +455,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
   <div class="wrap">
     <div>
       <h1 id="h1">รับตั้งชื่อบริษัทมงคล<br><span class="nw">ตามดวงเจ้าของ</span><span class="nw">และหุ้นส่วน</span><small>วิเคราะห์และออกแบบทุกชื่อโดย อ.ชัญ</small></h1>
-      <p class="sub">ชื่อบริษัทที่ได้รับ ไม่ได้ดูแค่ผลรวมเลข แต่ดูดวงของเจ้าของ หุ้นส่วน และภาพลักษณ์แบรนด์ไปพร้อมกัน ได้ชื่อที่ไม่ซ้ำ จดทะเบียนได้จริง และส่งงานภายใน 24 ชั่วโมง</p>
+      <p class="sub">ชื่อบริษัทที่ได้รับ ไม่ได้ดูแค่ผลรวมเลข แต่ดูดวงของเจ้าของ หุ้นส่วน และภาพลักษณ์แบรนด์ไปพร้อมกัน ได้ชื่อที่ไม่ซ้ำ จดทะเบียนได้จริง และเร็วสุดภายใน 24 ชม.</p>
       <div class="hero-pg">
         <h2 id="pg-h">คุณกำลังเจอกับปัญหาเหล่านี้ไหม?</h2>
         <p class="lede">ชื่อบริษัทเปลี่ยนภายหลังได้ แต่ต้องตามแก้ทั้งเอกสาร ป้าย และสื่อทุกอย่าง แถมลูกค้ายังต้องจำชื่อใหม่ เลือกชื่อที่ใช่ตั้งแต่วันแรกจึงคุ้มกว่า</p>
@@ -487,7 +478,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
       <div class="ctas">
         <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="hero">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8Zm-3.5 10.4H6.6a.5.5 0 0 1-.5-.5V9a.5.5 0 0 1 1 0v3.4h1.4a.5.5 0 0 1 0 1Zm2-.5a.5.5 0 0 1-1 0V9a.5.5 0 0 1 1 0Zm4.6 0a.5.5 0 0 1-.9.3l-2-2.7v2.4a.5.5 0 0 1-1 0V9a.5.5 0 0 1 .9-.3l2 2.7V9a.5.5 0 0 1 1 0Zm3.1-2.4a.5.5 0 0 1 0 1h-1.4v.9h1.4a.5.5 0 0 1 0 1h-1.9a.5.5 0 0 1-.5-.5V9a.5.5 0 0 1 .5-.5h1.9a.5.5 0 0 1 0 1h-1.4v.9Z"/></svg>
-          แอดไลน์ ปรึกษา อ.ชัญ
+          สอบถามเรื่องตั้งชื่อบริษัทมงคล
         </a>
         <a class="btn btn-ghost" href="tel:0993541542" data-track="click_call" data-loc="hero">โทร 099-354-1542</a>
       </div>
@@ -522,8 +513,8 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
   <div class="wrap">
     <div>
       <h2 id="rv-h" style="margin-bottom:22px">ฟังจากลูกค้าที่ใช้บริการจริง</h2>
-      <video class="vplayer" id="video" controls playsinline preload="metadata" poster="img/18.jpg" aria-label="วิดีโอรีวิวจากคุณนาตาลี ลูกค้าที่ใช้บริการจริง">
-        <source src="video/review.mp4" type="video/mp4">
+      <video class="vplayer" id="video" controls playsinline preload="metadata" poster="img/22.jpg" aria-label="วิดีโอรีวิวจากคุณนาตาลี ลูกค้าที่ใช้บริการจริง">
+        <source src="video/review2.mp4" type="video/mp4">
       </video>
       <p class="vcap">รีวิวสุดปังจากลูกค้าประจำที่ใช้บริการตั้งชื่อบริษัทมากกว่า 6 แบรนด์ดัง!</p>
     </div>
@@ -632,7 +623,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <li><b>วันนี้</b><span>3,000+ ธุรกิจ ไว้วางใจให้ อ.ชัญ ตั้งชื่อบริษัทให้</span></li>
       </ol>
       <div class="ctas">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="about">แอดไลน์ ปรึกษา อ.ชัญ</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="about"><i class="ln" aria-hidden="true"></i>สอบถามเรื่องตั้งชื่อบริษัทมงคล</a>
         <a class="btn btn-outline" href="tel:0993541542" data-track="click_call" data-loc="about">โทร 099-354-1542</a>
       </div>
       <div class="creds" aria-label="เกียรติบัตรของ อ.ชัญ">
@@ -696,7 +687,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
         <p class="fit">สำหรับธุรกิจที่มีเจ้าของคนเดียว</p>
         <div class="price"><b>1,999</b><span>บาท</span></div>
         <div class="vat">+VAT 7% รวม 2,139 บาท</div>
-        <ul><li>ชื่อบริษัทมงคล 1 ชื่อ</li><li>วิเคราะห์ดวงเจ้าของ 1 ท่าน</li><li>ส่งงานภายใน 2 วันทำการ</li></ul>
+        <ul><li>ชื่อบริษัทมงคล 1 ชื่อ</li><li>วิเคราะห์ดวงเจ้าของ 1 ท่าน</li><li>เร็วสุดภายใน 24 ชม.</li></ul>
         <a class="btn" data-pkg="เริ่มต้น" href="#" data-track="click_package">เลือกแพ็กเกจเริ่มต้น</a>
       </article>
       <article class="pkg rec">
@@ -751,7 +742,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
     </div>
     <div class="why-cta">
       <p>ราคาชัดเจน เริ่มต้น 1,999 บาท และได้ชื่อภายใน 24 ชั่วโมง</p>
-      <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="whyus">ทักไลน์ ปรึกษา อ.ชัญ</a>
+      <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="whyus"><i class="ln" aria-hidden="true"></i>สอบถามเรื่องตั้งชื่อบริษัทมงคล</a>
     </div>
   </div>
 </section>
@@ -778,27 +769,8 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
       <p class="exp">ตั้งชื่อให้มาแล้ว<b>3,000+ ธุรกิจ</b></p>
       <p class="lede">ทักไลน์หรือโทรปรึกษา อ.ชัญ ได้ ก่อนตัดสินใจเลือกแพ็กเกจ</p>
       <div class="ctas">
-        <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="final">แอดไลน์ @theluckyname</a>
+        <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="final"><i class="ln" aria-hidden="true"></i>สอบถามเรื่องตั้งชื่อบริษัทมงคล</a>
         <a class="btn btn-ghost" href="tel:0993541542" data-track="click_call" data-loc="final">โทร 099-354-1542</a>
-      </div>
-      <div class="share" aria-label="แชร์หน้านี้">
-        <p>รู้จักเพื่อนที่กำลังจะเปิดบริษัท? แชร์หน้านี้ให้เขา</p>
-        <div class="share-btns">
-          <a class="sh sh-line" id="sh-line" href="#" target="_blank" rel="noopener" data-track="share_click" data-loc="line">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s5.9-3.5 8-6C21.3 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8Z"/></svg>
-            แชร์ทาง LINE
-          </a>
-          <a class="sh sh-fb" id="sh-fb" href="#" target="_blank" rel="noopener" data-track="share_click" data-loc="facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.5 1.6-1.5h1.7V3.4c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.6V13h2.7v8h3.2Z"/></svg>
-            แชร์ทาง Facebook
-          </a>
-          <button class="sh sh-copy" id="sh-copy" type="button" data-track="share_click" data-loc="copy">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
-            คัดลอกลิงก์
-          </button>
-        </div>
-        <input class="share-url" id="sh-url" type="text" readonly aria-label="ลิงก์หน้านี้" hidden>
-        <p class="share-msg" id="sh-msg" role="status"></p>
       </div>
     </div>
   </div>
@@ -814,7 +786,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
 </footer>
 
 <div class="mbar" aria-label="ติดต่อด่วน">
-  <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="sticky">แอดไลน์ปรึกษา</a>
+  <a class="btn btn-line" href="https://line.me/R/ti/p/@theluckyname" data-track="click_line" data-loc="sticky"><i class="ln" aria-hidden="true"></i>สอบถามเรื่องตั้งชื่อบริษัทมงคล</a>
   <a class="btn btn-ghost" href="tel:0993541542" data-track="click_call" data-loc="sticky">โทรเลย</a>
 </div>
 
@@ -847,20 +819,6 @@ document.querySelectorAll('.faq details').forEach(function(d){
   d.addEventListener('toggle', function(){ if (d.open) track('faq_open', {question: d.querySelector('summary').textContent}); });
 });
 
-/* ---------- share buttons: share this page without the ad tracking parameters ---------- */
-(function(){
-  var url = location.protocol.indexOf('http') === 0 ? location.origin + location.pathname : 'https://www.theluckyname.com/';
-  var text = 'รับตั้งชื่อบริษัทมงคล ตามดวงเจ้าของและหุ้นส่วน โดย อ.ชัญ';
-  document.getElementById('sh-line').href = 'https://social-plugins.line.me/lineit/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(text);
-  document.getElementById('sh-fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
-  var box = document.getElementById('sh-url'), msg = document.getElementById('sh-msg');
-  document.getElementById('sh-copy').addEventListener('click', function(){
-    function fallback(){ box.value = url; box.hidden = false; box.focus(); box.select(); msg.textContent = 'กด Ctrl+C (หรือค้างแล้วเลือกคัดลอก) เพื่อคัดลอกลิงก์'; }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function(){ box.hidden = true; msg.textContent = 'คัดลอกลิงก์แล้ว'; }, fallback);
-    } else fallback();
-  });
-})();
 
 /* ---------- LINE deep links with prefilled message ---------- */
 function lineMsg(text){ return 'https://line.me/R/oaMessage/@theluckyname/?' + encodeURIComponent(text); }
