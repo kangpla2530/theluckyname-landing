@@ -185,6 +185,7 @@ section{padding:88px 0}
 .plates{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .plate{border:1px solid rgba(239,195,92,.5);border-radius:6px;padding:30px 26px;position:relative;background:#5B0C95}
 .plate::after{content:"";position:absolute;inset:6px;border:1px solid rgba(239,195,92,.22);border-radius:3px;pointer-events:none}
+.plate .ph{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%;border-radius:4px;margin:0 0 20px;position:relative;z-index:1}
 .plate .name{font-family:var(--serif);font-size:1.5rem;font-weight:700;line-height:1.3;letter-spacing:.02em}
 .plate .kind{color:rgba(255,255,255,.7);font-size:.93rem;margin-top:6px}
 .plate{display:flex;flex-direction:column}
@@ -545,7 +546,7 @@ footer .disclaim{flex-basis:100%;border-top:1px solid rgba(255,255,255,.1);paddi
       <p class="lede">ตัวอย่างชื่อที่ใช้งานจริง พร้อมผลรวมเลขศาสตร์ของแต่ละชื่อ</p>
     </div>
     <div class="plates">
-      <article class="plate"><div class="name">SURIYA VILLAGE</div><div class="kind">โครงการหมู่บ้านจัดสรร</div><div class="score"><b>55</b><ul class="ok"><li>ผลรวมเลขศาสตร์</li><li>นวนามศาสตร์</li><li>โหราศาสตร์ไทย</li></ul></div></article>
+      <article class="plate"><img class="ph" loading="lazy" src="img/pf1.jpg" width="600" height="600" alt="ซุ้มทางเข้าโครงการหมู่บ้าน SURIYA VILLAGE"><div class="name">SURIYA VILLAGE</div><div class="kind">โครงการหมู่บ้านจัดสรร</div><div class="score"><b>55</b><ul class="ok"><li>ผลรวมเลขศาสตร์</li><li>นวนามศาสตร์</li><li>โหราศาสตร์ไทย</li></ul></div></article>
       <article class="plate"><div class="name">168 MULTI PRODUCTS</div><div class="kind">อุตสาหกรรมเคมีภัณฑ์</div><div class="score"><b>54</b><ul class="ok"><li>ผลรวมเลขศาสตร์</li><li>นวนามศาสตร์</li><li>โหราศาสตร์ไทย</li></ul></div></article>
       <article class="plate"><div class="name">NEKO CHAN TRAVEL JAPAN</div><div class="kind">บริษัททัวร์ญี่ปุ่น</div><div class="score"><b>65</b><ul class="ok"><li>ผลรวมเลขศาสตร์</li><li>นวนามศาสตร์</li><li>โหราศาสตร์ไทย</li></ul></div></article>
     </div>
